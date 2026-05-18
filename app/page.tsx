@@ -8,11 +8,11 @@ export default async function Home() {
   const notes = await getNotes();
 
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 p-4 md:p-8">
+    <main className="p-4 md:p-8">
       <div className="max-w-4xl mx-auto space-y-8">
         <header className="text-center space-y-2 py-8">
-          <h1 className="text-4xl font-bold text-primary">المهام والملاحظات</h1>
-          <p className="text-muted-foreground">تطبيقك الشخصي لإدارة يومك بكل سهولة</p>
+          <h1 className="text-4xl font-bold text-primary">تطبيق مهامي</h1>
+          <p className="text-muted-foreground">نظم أفكارك ومهامك في مكان واحد</p>
         </header>
 
         <Tabs defaultValue="tasks" className="w-full">
