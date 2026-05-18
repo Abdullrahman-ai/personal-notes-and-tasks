@@ -1,4 +1,5 @@
 import { IBM_Plex_Sans_Arabic, Geist_Mono } from "next/font/google"
+import Navbar from "@/components/Navbar"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -16,7 +17,7 @@ const fontMono = Geist_Mono({
 })
 
 export const metadata = {
-  title: "المهام والملاحظات",
+  title: "تطبيق مهامي",
   description: "تطبيق بسيط لإدارة المهام والملاحظات الشخصية",
 }
 
@@ -32,8 +33,13 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("antialiased", fontMono.variable, "font-sans", ibmPlexSansArabic.variable)}
     >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 flex flex-col">
+        <ThemeProvider>
+          <Navbar />
+          <div className="flex-1">
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )
